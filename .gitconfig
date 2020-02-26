@@ -1,0 +1,34 @@
+[core]
+	excludesfile = /Users/sthompson/.gitignore_global
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE
+	path = 
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGE
+	trustExitCode = true
+[user]
+	name = Sean Thompson
+	email = sean.thompson@creditone.com
+[commit]
+	template = /Users/sthompson/.stCommitMsg
+[push]
+	default = upstream
+[alias]
+	all = "!f() { git add .; }; f"
+	graph = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+	clog = log --graph --oneline --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"  
+    mt = "!f() { git log  --grep=$1 --graph --oneline --branches --remotes=*; }; f"	
+	cam = "!f() { git add . && git commit -m \"$1\"; }; f"
+	cm = commit -m
+	mno = merge --no-ff
+	fet = fetch
+	pu = push -u
+	co = checkout
+	cob = checkout -b
+	st = status
+	filemod = "!f() { git diff-tree --no-commit-id --name-only -r \"$1\"; }; f"
+	upsync = !git rev-parse --abbrev-ref HEAD | xargs git push --set-upstream origin
+	clear = reset --hard
+	cot = "!f() { msg=$1; git rev-parse --abbrev-ref HEAD | xargs -I{} git commit -m \"[{}] $msg\";  }; f"
+[http]
+	sslVerify = true
