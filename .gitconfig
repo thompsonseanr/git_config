@@ -10,7 +10,7 @@
 	name = 
 	email = 
 [commit]
-	template = /Users/sthompson/.stCommitMsg
+	template = /Users/[[USER_HOME]]/.stCommitMsg
 [push]
 	default = upstream
 [alias]
