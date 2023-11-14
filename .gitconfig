@@ -7,8 +7,8 @@
 	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGE
 	trustExitCode = true
 [user]
-	name = Sean Thompson
-	email = sean.thompson@creditone.com
+	name = 
+	email = 
 [commit]
 	template = /Users/sthompson/.stCommitMsg
 [push]
